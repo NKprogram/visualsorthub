@@ -5,8 +5,7 @@ import ControlPanel from './ControlPanel/ControlPanel'
 function App() {
   return (
     <div className="App">
-      <h1>VisualSortHub</h1>
-      <SortingVisualizer />
+    <SortingVisualizer />
     </div>
   );
 }
