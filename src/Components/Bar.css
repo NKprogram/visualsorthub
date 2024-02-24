@@ -1,7 +1,30 @@
+.bars-container {
+  display: flex;
+  flex-direction: row; /* Ensure the bars are in a horizontal row */
+  align-items: flex-end; /* Align the bars at the bottom */
+  justify-content: center; /* Center the bars within the container */
+  flex-wrap: wrap; /* Allow bars to wrap onto multiple lines if needed */
+}
+
 .bar {
-    width: 20px; /* Adjust the width of the bars */
-    margin: 0 2px; /* Spacing between bars */
-    background-color: turquoise; /* Default color, can be overridden by props */
-    display: inline-block;
-    border-radius: 5px; /* Optional: adds rounded corners to the bars */
-  }
+  flex: 1 1 auto; /* Allows the bar to grow and shrink */
+  min-width: 5px; /* Minimum width of the bars, to ensure visibility */
+  max-width: 20px; /* Maximum width of the bars */
+  height: auto; /* Height should be auto to allow for dynamic resizing based on content */
+  margin: 0 2px; /* Spacing between bars */
+  background-color: turquoise; /* Bar color */
+  border-radius: 5px; /* Rounded corners for bars */
+  position: relative; /* Positioning for the number label */
+}
+
+.bar-number {
+  position: absolute;
+  font: bold;
+  width: 100%;
+  left: 0;
+  bottom: 100%;
+  color: white;
+  font-size: 12px;
+  text-align: center; /* Center the numbers on the bars */
+  white-space: nowrap; /* Prevents the text from wrapping */
+}

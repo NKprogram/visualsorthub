@@ -9,7 +9,9 @@ const Bar = ({ length, color = 'turquoise' }) => {
         height: `${length}px`,
         backgroundColor: color,
       }}
-    ></div>
+    >
+      <span className="bar-number">{length}</span>
+    </div>
   );
 };
 

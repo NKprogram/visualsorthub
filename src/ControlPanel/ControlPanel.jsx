@@ -19,7 +19,7 @@ const ControlPanel = ({
         id="sizeRange"
         type="range"
         min="5"
-        max="100"
+        max="200"
         defaultValue="50"
         disabled={isSorting}
         onChange={(e) => onArraySizeChange(parseInt(e.target.value))}
@@ -50,14 +50,6 @@ const ControlPanel = ({
       <button onClick={() => onStart('insertionSort')}>Insertion Sort</button>
       <button onClick={() => onStart('selectionSort')}>Selection Sort</button>
       <button onClick={() => onStart('heapSort')}>Heap Sort</button>
-      <input
-        type="range"
-        min="10"
-        max="200"
-        defaultValue="50"
-        onChange={(e) => onArraySizeChange(parseInt(e.target.value))}
-      />
-      {/* Add any additional controls needed for the visualizer */}
     </div>
   );
 };

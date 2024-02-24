@@ -1,0 +1,54 @@
+/* Overall background for the sorting visualizer */
+.sorting-visualizer {
+    display: flex;
+    flex-direction: column; /* This ensures that the title and the bar container are stacked vertically */
+    align-items: center; /* This centers the children horizontally */
+    justify-content: flex-start; /* Aligns children to the start of the flex container */
+    background: linear-gradient(to right, violet,green);
+    color: white;
+    min-height: 100vh;
+    width: 100%;
+    padding: 20px;
+  }
+
+/* Title styling */
+.sorting-visualizer:before {
+  content: "VisualSortHub";
+  font-size: 2em; /* Bigger font for the title */
+  color: white; /* Title color */
+  font-weight: bold; /* Make the title bold */
+  text-align: center; /* Center-align the title */
+  width: 100%; /* Full container width */
+  margin-bottom: 20px; /* Space below the title */
+}
+
+/* Control panel styling */
+.ControlPanel {
+  width: 100%; /* Control panel width */
+  margin: 0 auto; /* Center the control panel horizontally */
+  padding: 15px; /* Padding inside the control panel */
+  background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Soft shadow for depth */
+}
+
+.bars-container {
+    display: flex;
+    flex-direction: row; /* Ensure the bars are in a horizontal row */
+    align-items: flex-end; /* Align the bars at the bottom */
+    justify-content: center; /* Center the bars within the container */
+    flex-wrap: nowrap; /* Prevent the bars from wrapping onto multiple lines */
+    height: calc(100% - 30px); /* Adjust the height as necessary */
+    padding-bottom: 10px; /* This will push up the bars from the bottom edge */
+    min-height: 200px; /* Minimum height for bars container, adjust as needed */
+    overflow-x: auto; /* Allows scrolling if bars overflow */
+    overflow-y: hidden; /* Prevent vertical scrolling */
+    width: 100%;
+  }
+  
+  /* Styles for individual bars */
+.array-bar {
+    /* Existing styles */
+    display: inline-block; /* This makes sure the bars are laid out in a line */
+    /* Add any additional styles you need */
+  }
