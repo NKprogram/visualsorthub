@@ -1,30 +1,40 @@
 .bars-container {
   display: flex;
-  flex-direction: row; /* Ensure the bars are in a horizontal row */
-  align-items: flex-end; /* Align the bars at the bottom */
-  justify-content: center; /* Center the bars within the container */
-  flex-wrap: wrap; /* Allow bars to wrap onto multiple lines if needed */
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+  flex-wrap: nowrap; /* Prevents bars from wrapping onto multiple lines */
 }
 
 .bar {
-  flex: 1 1 auto; /* Allows the bar to grow and shrink */
-  min-width: 5px; /* Minimum width of the bars, to ensure visibility */
-  max-width: 20px; /* Maximum width of the bars */
-  height: auto; /* Height should be auto to allow for dynamic resizing based on content */
-  margin: 0 2px; /* Spacing between bars */
-  background-color: turquoise; /* Bar color */
-  border-radius: 5px; /* Rounded corners for bars */
-  position: relative; /* Positioning for the number label */
+  flex: 1 1 auto; /* Adjusts size based on content and available space */
+  flex-grow: 1;
+  min-width: 20px; /* Default min-width, consider adjusting based on JS */
+  max-width: 100px; /* Default max-width, adjust this value based on JS */
+  margin: 0 5px;
+  background-color: turquoise;
+  border-radius: 5px 5px 0 0; /* Rounded top corners */
+  position: relative;
+  display: flex;
+  align-items: center; /* Center the content vertically */
+  justify-content: center; /* Center the content horizontally */
+  color: black;
 }
 
 .bar-number {
   position: absolute;
-  font: bold;
-  width: 100%;
-  left: 0;
-  bottom: 100%;
+  top: 50%; /* Centered vertically */
+  left: 50%; /* Centered horizontally */
+  transform: translate(-50%, -50%); /* Adjusts the positioning to truly center the text */
+  font-weight: bold;
   color: white;
   font-size: 12px;
-  text-align: center; /* Center the numbers on the bars */
-  white-space: nowrap; /* Prevents the text from wrapping */
+  text-align: center;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.bar:hover {
+  transform: scale(1.05);
+  z-index: 2; /* Ensure the bar is above others on hover */
 }

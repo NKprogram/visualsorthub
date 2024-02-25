@@ -1,3 +1,124 @@
-/* ControlPanel.css */
+/* ControlPanel.css update with button-neon class */
+.button-neon {
+  align-items: center;
+  background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  color: #FFFFFF;
+  display: flex;
+  font-family: 'Phantomsans', sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  padding: 3px;
+  cursor: pointer;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  min-width: 140px;
+  max-width: 100%;
+}
 
-/* Add your CSS styles here */
+.button-neon:active,
+.button-neon:hover {
+  outline: 0;
+}
+
+.button-neon span {
+  background-color: rgb(5, 6, 45);
+  padding: 16px 24px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+.button-neon:hover span {
+  background: none;
+}
+
+/* Unique button styles for different sorting algorithms and controls */
+.button-merge { background-image: linear-gradient(144deg, #fc0a02, #ff7c02); }
+.button-quick { background-image: linear-gradient(144deg, #a76604, #f7e605); }
+.button-bubble { background-image: linear-gradient(144deg, #a79c03, #1efa01, ); }
+.button-insertion { background-image: linear-gradient(144deg, #136902, #05dae9); }
+.button-selection { background-image: linear-gradient(144deg, #0004ff, #f805f8);} 
+.button-heap { background-image: linear-gradient(144deg, #260347, #f806c4); }
+.button-playpause { background-image: linear-gradient(144deg,  #500249, #000000); } 
+.button-reset { background-image: linear-gradient(144deg, #8d8d8d, #865c00); }
+
+/* Responsive and layout styles remain the same */
+@media (min-width: 768px) {
+  .button-neon {
+    font-size: 24px;
+    min-width: 196px;
+  }
+}
+
+.control-panel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
+  gap: 10px;
+}
+
+.control-panel label {
+  margin: 0 10px 0 0;
+}
+
+.control-panel input[type="range"] {
+  margin: 0 10px;
+}
+
+.control-panel button {
+  margin: 0 5px;
+}
+
+.button-neon {
+  margin: 0;
+  flex: 0 0 auto;
+}
+
+@media (max-width: 768px) {
+  .control-panel {
+    flex-direction: column;
+  }
+
+  .control-panel label,
+  .control-panel input[type="range"],
+  .control-panel button {
+    margin: 5px 0;
+  }
+
+  .button-neon {
+    width: 100%;
+  }
+}
+
+.slider-container {
+  position: relative;
+  display: inline-block; /* Adjust as needed to fit your layout */
+}
+
+.tooltip {
+  position: absolute;
+  background-color: rgb(70, 3, 70); 
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 10px; 
+  font-weight: bold; 
+  border: 2px solid #04e429; /* Adds a border with a slightly darker shade */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5); /* Adds a subtle shadow for depth */
+  transform: translateX(-50%);
+  bottom: 30px; /* Distance from the top of the slider */
+  left: 50%;
+  z-index: 1;
+  white-space: nowrap; /* Prevents breaking into multiple lines */
+}

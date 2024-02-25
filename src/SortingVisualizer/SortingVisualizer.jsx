@@ -13,7 +13,7 @@ import heapSort from "../Algorithms/HeapSort";
 
 const SortingVisualizer = () => {
   const [array, setArray] = useState([]);
-  const [arraySize, setArraySize] = useState(50);
+  const [arraySize, setArraySize] = useState(25);
   const [isSorting, setIsSorting] = useState(false);
   const [animationSpeed, setAnimationSpeed] = useState(50); // Adjusted for clearer visibility
   const [isPaused, setIsPaused] = useState(false);
@@ -101,6 +101,7 @@ const SortingVisualizer = () => {
       }
     });
   };
+
   const pauseSort = () => {
     setIsPaused(true);
     timeouts.current.forEach(clearTimeout);
@@ -119,6 +120,8 @@ const SortingVisualizer = () => {
       animateAlgorithm(newAnimations);
     }
   };
+
+  
 
   return (
     <div className="sorting-visualizer">

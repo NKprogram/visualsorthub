@@ -1,26 +1,56 @@
-/* Overall background for the sorting visualizer */
-.sorting-visualizer {
+  /* Overall background for the sorting visualizer */
+  .sorting-visualizer {
     display: flex;
     flex-direction: column; /* This ensures that the title and the bar container are stacked vertically */
     align-items: center; /* This centers the children horizontally */
     justify-content: flex-start; /* Aligns children to the start of the flex container */
-    background: linear-gradient(to right, violet,green);
+    background: linear-gradient(135deg, #0f0f0f 0%, #292929 50%, #1e1e1e 100%);
     color: white;
     min-height: 100vh;
     width: 100%;
     padding: 20px;
   }
 
-/* Title styling */
-.sorting-visualizer:before {
-  content: "VisualSortHub";
-  font-size: 2em; /* Bigger font for the title */
-  color: white; /* Title color */
-  font-weight: bold; /* Make the title bold */
-  text-align: center; /* Center-align the title */
-  width: 100%; /* Full container width */
-  margin-bottom: 20px; /* Space below the title */
-}
+  .sorting-visualizer:before {
+    content: "VisualSortHub";
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px 0;
+    display: block;
+    position: relative;
+    z-index: 10;
+    color: transparent; /* Hide the text color to show the gradient */
+    background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: rainbow-animation 5s infinite linear;
+  }
+  
+  @keyframes rainbow-animation {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+  }
+  
+  .sorting-visualizer:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-image: repeating-linear-gradient(
+      -45deg,
+      #fff0, #fff0 5px,
+      #ddd 5px, #ddd 10px
+    ); /* Subtle sorting motif */
+    opacity: 0.5; /* Make the background less intrusive */
+  }
 
 /* Control panel styling */
 .ControlPanel {
@@ -33,19 +63,18 @@
 }
 
 .bars-container {
-    display: flex;
-    flex-direction: row; /* Ensure the bars are in a horizontal row */
-    align-items: flex-end; /* Align the bars at the bottom */
-    justify-content: center; /* Center the bars within the container */
-    flex-wrap: nowrap; /* Prevent the bars from wrapping onto multiple lines */
-    height: calc(100% - 30px); /* Adjust the height as necessary */
-    padding-bottom: 10px; /* This will push up the bars from the bottom edge */
-    min-height: 200px; /* Minimum height for bars container, adjust as needed */
-    overflow-x: auto; /* Allows scrolling if bars overflow */
-    overflow-y: hidden; /* Prevent vertical scrolling */
-    width: 100%;
-  }
-  
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+  flex-wrap: nowrap;
+  height: calc(100% - 30px);
+  padding-bottom: 10px;
+  min-height: 200px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  width: 100%;
+}
   /* Styles for individual bars */
 .array-bar {
     /* Existing styles */
