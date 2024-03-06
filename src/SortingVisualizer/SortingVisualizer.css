@@ -75,9 +75,10 @@
   overflow-y: hidden;
   width: 100%;
 }
-  /* Styles for individual bars */
+ 
 .array-bar {
-    /* Existing styles */
-    display: inline-block; /* This makes sure the bars are laid out in a line */
-    /* Add any additional styles you need */
-  }
+  width: 2px;
+  display: inline-block;
+  margin: 0 1px;
+}
+  

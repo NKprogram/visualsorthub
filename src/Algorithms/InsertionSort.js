@@ -1,25 +1,23 @@
 function insertionSort(array) {
-    const animations = [];
-    let n = array.length;
-    
-    for (let i = 1; i < n; i++) {
-      let key = array[i];
-      let j = i - 1;
-  
-      /* Move elements of array[0..i-1], that are
-      greater than key, to one position ahead
-      of their current position */
-      while (j >= 0 && array[j] > key) {
-        animations.push({type: 'comparison', indices: [j, j + 1]});
-        animations.push({type: 'overwrite', index: j + 1, value: array[j]});
-        array[j + 1] = array[j];
-        j = j - 1;
-      }
-      animations.push({type: 'overwrite', index: j + 1, value: key});
-      array[j + 1] = key;
+  const animations = [];
+  for (let i = 1; i < array.length; i++) {
+    let key = array[i];
+    let j = i - 1;
+
+    // Compare key with each element on the left of it until an element smaller than it is found
+    while (j >= 0 && array[j] > key) {
+      // For visual purposes, we push the compared indices and heights for potential swap
+      animations.push([j, j + 1, array[j + 1], array[j], false]);
+      array[j + 1] = array[j];
+      j = j - 1;
     }
-    
-    return animations;
+    // This is for the final position of key, where a swap doesn't occur
+    animations.push([j + 1, i, key, array[j + 1], true]);
+    array[j + 1] = key;
   }
+  // Push the animation for the last element
+  animations.push([array.length - 1, array.length - 1, array[array.length - 1], array[array.length - 1], true]);
+  return animations;
+}
 
 export default insertionSort;

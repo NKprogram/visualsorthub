@@ -1,22 +1,28 @@
 function selectionSort(array) {
-    const animations = [];
-    let n = array.length;
-    
-    for (let i = 0; i < n-1; i++) {
-      let min_idx = i;
-      for (let j = i+1; j < n; j++) {
-        animations.push({type: 'comparison', indices: [min_idx, j]});
-        if (array[j] < array[min_idx]) {
-          min_idx = j;
-        }
+  const animations = [];
+  let n = array.length;
+
+  for (let i = 0; i < n; i++) {
+    let minIndex = i;
+    for (let j = i + 1; j < n; j++) {
+      // Push the indices to change their color
+      animations.push([minIndex, j, false]);
+      // Push them again to revert their color
+      animations.push([minIndex, j, false]);
+      if (array[j] < array[minIndex]) {
+        minIndex = j;
       }
-  
-      // Swap the found minimum element with the first element
-      animations.push({type: 'swap', indices: [i, min_idx], heights: [array[min_idx], array[i]]});
-      [array[i], array[min_idx]] = [array[min_idx], array[i]];
     }
-    
-    return animations;
+    // Swap the elements if minIndex is not the position i
+    if (i !== minIndex) {
+      // Push the indices to show a swap animation
+      animations.push([i, minIndex, true, array[minIndex], array[i]]);
+      let temp = array[i];
+      array[i] = array[minIndex];
+      array[minIndex] = temp;
+    }
   }
+  return animations;
+}
 
 export default selectionSort;

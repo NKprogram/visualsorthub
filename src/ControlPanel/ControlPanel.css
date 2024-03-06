@@ -1,4 +1,4 @@
-/* ControlPanel.css update with button-neon class */
+
 .button-neon {
   align-items: center;
   background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
@@ -41,14 +41,13 @@
 }
 
 /* Unique button styles for different sorting algorithms and controls */
-.button-merge { background-image: linear-gradient(144deg, #fc0a02, #ff7c02); }
-.button-quick { background-image: linear-gradient(144deg, #a76604, #f7e605); }
-.button-bubble { background-image: linear-gradient(144deg, #a79c03, #1efa01, ); }
-.button-insertion { background-image: linear-gradient(144deg, #136902, #05dae9); }
-.button-selection { background-image: linear-gradient(144deg, #0004ff, #f805f8);} 
-.button-heap { background-image: linear-gradient(144deg, #260347, #f806c4); }
-.button-playpause { background-image: linear-gradient(144deg,  #500249, #000000); } 
-.button-reset { background-image: linear-gradient(144deg, #8d8d8d, #865c00); }
+.button-merge { background-image: linear-gradient(144deg, #bea2a1, #e7810c); }
+.button-quick { background-image: linear-gradient(144deg, #04408d, #f7e605); }
+.button-bubble { background-image: linear-gradient(144deg, #0841ac, #069778, ); }
+.button-insertion { background-image: linear-gradient(144deg, #290101, #8a0416); }
+.button-selection { background-image: linear-gradient(144deg, #a00298, #022da3);} 
+.button-heap { background-image: linear-gradient(144deg, #059711, #d4f806); }
+.button-reset { background-image: linear-gradient(144deg, #500249, rgb(0, 0, 0)); }
 
 /* Responsive and layout styles remain the same */
 @media (min-width: 768px) {
