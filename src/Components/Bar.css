@@ -12,7 +12,7 @@
   min-width: 20px; /* Default min-width, consider adjusting based on JS */
   max-width: 100px; /* Default max-width, adjust this value based on JS */
   margin: 0 5px;
-  background-color: turquoise;
+  background-color: blue;
   border-radius: 5px 5px 0 0; /* Rounded top corners */
   position: relative;
   display: flex;

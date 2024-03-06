@@ -47,7 +47,7 @@
 .button-insertion { background-image: linear-gradient(144deg, #290101, #8a0416); }
 .button-selection { background-image: linear-gradient(144deg, #a00298, #022da3);} 
 .button-heap { background-image: linear-gradient(144deg, #059711, #d4f806); }
-.button-reset { background-image: linear-gradient(144deg, #500249, rgb(0, 0, 0)); }
+.button-reset { background-image: linear-gradient(144deg, #f8f8f8, rgb(0, 0, 0)); }
 
 /* Responsive and layout styles remain the same */
 @media (min-width: 768px) {
@@ -100,24 +100,69 @@
   }
 }
 
+
+/* Adjust the slider container to ensure proper layout and spacing */
 .slider-container {
-  position: relative;
-  display: inline-block; /* Adjust as needed to fit your layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* Adjust the space between the slider and its value display */
 }
 
-.tooltip {
-  position: absolute;
-  background-color: rgb(70, 3, 70); 
-  color: white;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 10px; 
-  font-weight: bold; 
-  border: 2px solid #04e429; /* Adds a border with a slightly darker shade */
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5); /* Adds a subtle shadow for depth */
-  transform: translateX(-50%);
-  bottom: 30px; /* Distance from the top of the slider */
-  left: 50%;
-  z-index: 1;
-  white-space: nowrap; /* Prevents breaking into multiple lines */
+/* New Styles for Range Slider */
+.range {
+  -webkit-appearance: none; /* Removes default styling */
+  appearance: none; /* Define standard property for compatibility */
+  width: 100%; /* Adjusts the width to fit your control panel */
+  height: 15px;
+  background: #111;
+  outline: none;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 1);
+}
+
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #00fd0a;
+  cursor: pointer;
+  border: 4px solid #333;
+}
+
+.slider-description {
+  font-size: 1em; /* Adjust to match your design */
+  color: #FFFFFF; /* Ensures visibility against the panel's background */
+  margin-top: 10px; /* Space between the slider and the text */
+  text-align: center; /* Centers the text under the slider */
+}
+
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px; /* Adjust the space between elements */
+}
+
+.slider-value {
+  font-size: 1em; /* Adjust based on your design */
+  color: #FFFFFF; /* Ensures visibility */
+}
+
+/* Adjust the #rangeValue style to fit your design */
+#rangeValue {
+  font-size: 1em; /* Adjust based on your control panel's text size */
+  color: #FFFFFF; /* Ensure it's visible against your control panel's background */
+}
+
+@media (max-width: 768px) {
+  .range {
+    width: 90%; /* Adjust width for smaller screens */
+  }
+
+  #rangeValue {
+    font-size: 0.8em; /* Adjust text size for readability on smaller screens */
+  }
 }

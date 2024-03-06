@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './SortingVisualizer.css';
 import ControlPanel from '../ControlPanel/ControlPanel.jsx';
 import Bar from '../Components/Bar.jsx';
@@ -15,27 +15,28 @@ const SortingVisualizer = () => {
   const [array, setArray] = useState([]);
   const [arraySize, setArraySize] = useState(20);
   const [animationSpeed, setAnimationSpeed] = useState(50);
+  const [isSorting, setIsSorting] = useState(false);
   const PRIMARY_COLOR = 'blue';
   const SECONDARY_COLOR = 'red';
   const FINAL_COLOR = 'green';
 
-  useEffect(() => {
-    resetArray();
-  }, [arraySize]);
   
-
   const generateRandomNumber = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1) + min);
   };
 
-  const resetArray = () => {
+  const resetArray = useCallback(() => {
     const newArray = [];
     for (let i = 0; i < arraySize; i++) {
       newArray.push(generateRandomNumber(5, 1000));
     }
     setArray(newArray);
     changeBarColor(PRIMARY_COLOR);
-  };
+  }, [arraySize]);
+
+  useEffect(() => {
+    resetArray();
+  }, [resetArray, arraySize]);
 
   const changeBarColor = (color) => {
     const arrayBars = document.getElementsByClassName('bar');
@@ -136,7 +137,6 @@ const SortingVisualizer = () => {
           // Update the value on the bar for barOneIdx
           const barOneNumber = arrayBars[barOneIdx].getElementsByClassName('bar-number')[0];
           barOneNumber.innerText = newHeight;
-      
           if (sortAlgorithm === quickSort || sortAlgorithm === heapSort || sortAlgorithm === mergeSort) {
             const [,, barTwoIdx, newHeightTwo] = animations[i];
             if (arrayBars[barTwoIdx]) {
@@ -150,12 +150,16 @@ const SortingVisualizer = () => {
         }
       }
     }
-    setTimeout(() => changeBarColor(FINAL_COLOR),animations.length * animationSpeed + 1);
+    setTimeout(() => {
+      changeBarColor(FINAL_COLOR);
+      setIsSorting(false); // Sorting finished
+    }, animations.length * animationSpeed + 1);
   };
 
   const sort = (algorithm) => {
     const animations = algorithm(array);
     handleAnimations(animations, algorithm);
+
   };
 
   return (
@@ -175,7 +179,8 @@ const SortingVisualizer = () => {
             };
             sort(algorithms[algorithmName]);
           }}
-        />`
+          isSorting={isSorting}
+        />
      <div className="bars-container">
         {array.map((value, idx) => (
           <Bar key={idx} height={value} color={PRIMARY_COLOR} value={value} />
