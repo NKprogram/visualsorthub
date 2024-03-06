@@ -11,31 +11,35 @@
     padding: 20px;
   }
 
-  .sorting-visualizer:before {
-    content: "VisualSortHub";
-    font-size: 2em;
-    font-weight: bold;
-    text-align: center;
-    width: 100%;
-    margin-bottom: 20px;
-    padding: 10px 0;
-    display: block;
-    position: relative;
-    z-index: 10;
-    color: transparent; /* Hide the text color to show the gradient */
-    background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
-    background-size: 200% 100%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    animation: rainbow-animation 5s infinite linear;
-  }
+ /* Enhanced title styling */
+.sorting-visualizer:before {
+  content: "VisualSortHub";
+  font-size: 3em; /* Increased font size for more impact */
+  font-weight: bold; /* Bold font weight for emphasis */
+  text-align: center;/* Center the title */
+  width: 100%;/* Make the title span the entire width of the container */
+  margin-bottom: 20px;/* Add some space between the title and the control panel */
+  padding: 20px 0; /* Increased padding for better spacing */
+  display: block;/* Make the title a block element */
+  position: relative;/* Position the title relative to the container */
+  z-index: 10;/* Ensure the title is on top of the background */
+  color: transparent; /* Hide the text */
+  background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);/* Rainbow gradient */
+  background-size: 200% 100%;/* Larger background size for more colors */
+  background-clip: text;/* Clip the background to the text */
+  -webkit-background-clip: text;/* Clip the background to the text for Safari */
+  animation: rainbow-animation 5s infinite linear;/* Animate the rainbow gradient */
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6); /* Soft shadow for depth */
+}
+
   
   @keyframes rainbow-animation {
-    0% {background-position: 0% 50%;}
+    0% {background-position: 0% 50%;} 
     50% {background-position: 100% 50%;}
     100% {background-position: 0% 50%;}
   }
   
+  /* Subtle background pattern */
   .sorting-visualizer:after {
     content: "";
     position: absolute;
@@ -62,20 +66,22 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Soft shadow for depth */
 }
 
+/* Button styling */
 .bars-container {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: center;
-  flex-wrap: nowrap;
-  height: calc(100% - 30px);
-  padding-bottom: 10px;
-  min-height: 200px;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  width: 100%;
+  display: flex;/* Flex container for the array bars */
+  flex-direction: row;/* Arrange the array bars horizontally */
+  align-items: flex-end;/* Align the array bars to the bottom of the container */
+  justify-content: center;/* Center the array bars horizontally */
+  flex-wrap: nowrap;/* Prevent the array bars from wrapping */
+  height: calc(100% - 30px);/* Make the array bars fill the available space */
+  padding-bottom: 10px;/* Add some space at the bottom of the array bars */
+  min-height: 200px;/* Set a minimum height for the array bars */
+  overflow-x: hidden;/* Hide the horizontal overflow */
+  overflow-y: hidden;/* Hide the vertical overflow */
+  width: 100%;/* Make the array bars fill the entire width of the container */
 }
- 
+
+/* Bar styling */
 .array-bar {
   width: 2px;
   display: inline-block;

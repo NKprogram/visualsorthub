@@ -1,9 +1,10 @@
+//This is the implementation of the Insertion Sort algorithm
 function insertionSort(array) {
+  // Array to store the animations
   const animations = [];
   for (let i = 1; i < array.length; i++) {
     let key = array[i];
     let j = i - 1;
-
     // Compare key with each element on the left of it until an element smaller than it is found
     while (j >= 0 && array[j] > key) {
       // For visual purposes, we push the compared indices and heights for potential swap

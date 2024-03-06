@@ -1,16 +1,17 @@
 
+/* Import the font */
 .button-neon {
-  align-items: center;
-  background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
-  border: 0;
+  align-items: center;/* Center the text and the icon */
+  background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);/* Neon gradient */
+  border: 0;/* Remove the border */
   border-radius: 8px;
-  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;/* Soft shadow for depth */
   color: #FFFFFF;
   display: flex;
-  font-family: 'Phantomsans', sans-serif;
-  font-size: 20px;
-  justify-content: center;
-  line-height: 1em;
+  font-family: 'Phantomsans', sans-serif;/* Use the custom font */
+  font-size: 10px;
+  justify-content: center;/* Center the text and the icon */
+  line-height: 0.5em;/* Adjust the line height for the text */
   padding: 3px;
   cursor: pointer;
   text-decoration: none;
@@ -22,11 +23,13 @@
   max-width: 100%;
 }
 
+/* Add hover and active states */
 .button-neon:active,
 .button-neon:hover {
   outline: 0;
 }
 
+/* Add the neon glow effect */
 .button-neon span {
   background-color: rgb(5, 6, 45);
   padding: 16px 24px;
@@ -36,6 +39,7 @@
   transition: 300ms;
 }
 
+/* Adjust the glow effect on hover */
 .button-neon:hover span {
   background: none;
 }
@@ -49,7 +53,7 @@
 .button-heap { background-image: linear-gradient(144deg, #059711, #d4f806); }
 .button-reset { background-image: linear-gradient(144deg, #f8f8f8, rgb(0, 0, 0)); }
 
-/* Responsive and layout styles remain the same */
+/* Adjust the button size for different screen sizes */
 @media (min-width: 768px) {
   .button-neon {
     font-size: 24px;
@@ -57,6 +61,7 @@
   }
 }
 
+/* Adjust the control panel layout for different screen sizes */
 .control-panel {
   display: flex;
   flex-direction: row;
@@ -71,13 +76,16 @@
   margin: 0 10px 0 0;
 }
 
+/* Adjust the slider and button spacing */
 .control-panel input[type="range"] {
   margin: 0 10px;
 }
 
+/* Adjust the button spacing */
 .control-panel button {
   margin: 0 5px;
 }
+
 
 .button-neon {
   margin: 0;

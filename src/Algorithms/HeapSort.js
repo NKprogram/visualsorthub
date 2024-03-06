@@ -1,4 +1,6 @@
+//This is the implementation of the heap sort algorithm
 function heapSort(array) {
+  // Array to store the animations
   const animations = [];
   buildMaxHeap(array, animations);
   let end = array.length - 1;
@@ -26,15 +28,12 @@ function siftDown(array, start, end, animations) {
   let left = start * 2 + 1,
       right = left + 1,
       largest = start;
-
   if (left <= end && array[left] > array[largest]) {
     largest = left;
   }
-
   if (right <= end && array[right] > array[largest]) {
     largest = right;
   }
-
   if (largest !== start) {
     // Record the swap operation for visualization.
     animations.push([start, largest]); // values being swapped

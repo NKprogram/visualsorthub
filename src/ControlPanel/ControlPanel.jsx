@@ -1,28 +1,37 @@
-import React, { useState , useEffect } from 'react';
-import './ControlPanel.css'; // Ensure your CSS file includes the new slider styles
+import React, { useState , useEffect } from 'react'; // Import the useState and useEffect hooks
+import './ControlPanel.css'; // Import the CSS file
 
 const ControlPanel = ({
-  onReset,
-  onArraySizeChange,
-  onSpeedChange,
+  onReset,// Prop to handle array reset
+  onArraySizeChange,// Prop to handle array size change
+  onSpeedChange,// Prop to handle speed change
   onSort, // Prop to handle sorting based on the algorithm name
   isSorting, // New prop to indicate if sorting is in progress
 }) => {
   const [sliderValueSize, setSliderValueSize] = useState(20); // Default value for the array size slider
-  const [sliderValueSpeed, setSliderValueSpeed] = useState(50); // Default value for the speed slider, adjusted according to your needs
+  const [sliderValueSpeed, setSliderValueSpeed] = useState(50); // Default value for the speed slider
 
+  // Function to update the background of the slider
   const updateSliderBackground = (value, sliderId) => {
+    // Get the slider element
     const slider = document.getElementById(sliderId);
+    // Calculate the percentage based on the value
     const percentage = ((value - slider.min) / (slider.max - slider.min)) * 100;
+    // Set the background of the slider
     slider.style.background = `linear-gradient(to right, purple ${percentage}%, #111 ${percentage}%, #111 100%)`;
   };
-
+ 
+  // Function to handle the array size slider change
   const handleSizeSliderChange = (value) => {
+    // Update the state with the new value
     setSliderValueSize(value);
+    // Call the prop function to handle the array size change
     onArraySizeChange(parseInt(value));
+    // Update the background of the slider
     updateSliderBackground(value, 'sizeRange');
   };
 
+  // Function to handle the speed slider change
   const handleSpeedSliderChange = (value) => {
     setSliderValueSpeed(value);
     onSpeedChange(parseInt(value));
@@ -31,9 +40,10 @@ const ControlPanel = ({
 
   // Initialize slider backgrounds on component mount
   useEffect(() => {
+    // Update the background of the sliders
     updateSliderBackground(sliderValueSize, 'sizeRange');
     updateSliderBackground(sliderValueSpeed, 'speedRange');
-  }, []); // Empty dependency array means this effect runs once on mount
+  }, []); 
 
   
   return (

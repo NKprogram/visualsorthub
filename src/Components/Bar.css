@@ -9,15 +9,15 @@
 .bar {
   flex: 1 1 auto; /* Adjusts size based on content and available space */
   flex-grow: 1;
-  min-width: 20px; /* Default min-width, consider adjusting based on JS */
-  max-width: 100px; /* Default max-width, adjust this value based on JS */
+  min-width: 20px; /* Default min-width */
+  max-width: 100px; /* Default max-width*/
   margin: 0 5px;
   background-color: blue;
   border-radius: 5px 5px 0 0; /* Rounded top corners */
   position: relative;
   display: flex;
-  align-items: center; /* Center the content vertically */
-  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Centers the content vertically */
+  justify-content: center; /* Centers the content horizontally */
   color: black;
 }
 
@@ -25,7 +25,7 @@
   position: absolute;
   top: 50%; /* Centered vertically */
   left: 50%; /* Centered horizontally */
-  transform: translate(-50%, -50%); /* Adjusts the positioning to truly center the text */
+  transform: translate(-50%, -50%); /* Adjusts the positioning of the number to be in the centre of the bar */
   font-weight: bold;
   color: white;
   font-size: 12px;
@@ -36,5 +36,5 @@
 
 .bar:hover {
   transform: scale(1.05);
-  z-index: 2; /* Ensure the bar is above others on hover */
+  z-index: 2; /* Ensure sthe bar is above others on hover */
 }

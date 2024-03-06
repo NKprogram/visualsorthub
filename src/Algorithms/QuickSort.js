@@ -1,11 +1,14 @@
 
+//This is the implementation of the Quick Sort algorithm
 function quickSort(array) {
+  // Array to store the animations
   const animations = [];
   if (array.length <= 1) return array;
   quickSortHelper(array, 0, array.length - 1, animations);
   return animations;
 }
 
+// This is the helper function for the quick sort algorithm
 function quickSortHelper(items, left, right, animations) {
   var index;
   if (items.length > 1) {
@@ -20,6 +23,7 @@ function quickSortHelper(items, left, right, animations) {
   return items;
 }
 
+// This is the function that partitions the array
 function partition(items, left, right, animations) {
   var pivot = items[Math.floor((right + left) / 2)], //middle element
       i = left, //left pointer
@@ -43,6 +47,7 @@ function partition(items, left, right, animations) {
   return i;
 }
 
+// This is the function that swaps the elements
 function swap(items, firstIndex, secondIndex){
   var temp = items[firstIndex];
   items[firstIndex] = items[secondIndex];

@@ -1,7 +1,8 @@
+//This is the implementation of the Selection Sort algorithm
 function selectionSort(array) {
+  // Array to store the animations
   const animations = [];
   let n = array.length;
-
   for (let i = 0; i < n; i++) {
     let minIndex = i;
     for (let j = i + 1; j < n; j++) {

@@ -1,4 +1,6 @@
+//This is the implementation of the bubble sort algorithm
 function bubbleSort(array) {
+  // Array to store the animations
   const animations = [];
   let n = array.length;
   let swapped;
