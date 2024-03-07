@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/visualsorthub/static/css/main.b33c7772.css",
+    "main.js": "/visualsorthub/static/js/main.b8471299.js",
+    "static/js/592.d174873f.chunk.js": "/visualsorthub/static/js/592.d174873f.chunk.js",
+    "index.html": "/visualsorthub/index.html",
+    "main.b33c7772.css.map": "/visualsorthub/static/css/main.b33c7772.css.map",
+    "main.b8471299.js.map": "/visualsorthub/static/js/main.b8471299.js.map",
+    "592.d174873f.chunk.js.map": "/visualsorthub/static/js/592.d174873f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b33c7772.css",
+    "static/js/main.b8471299.js"
+  ]
+}
