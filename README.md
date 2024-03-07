@@ -32,23 +32,25 @@ To set up VisualSortHub on your local machine, follow these steps:
 - **Selection Sort**: Demonstrates the Selection Sort mechanism.
 - **Heap Sort**: Triggers the Heap Sort algorithm.
 
-![alt text](image.png)
+![image](https://github.com/NKprogram/visualsorthub/assets/121994468/4ce665de-2dca-49a0-99a2-f1a0f3bc916f)
 
 
 ### Bars
 
 - The bars represent the elements of the array, with their heights corresponding to the values they represent.
 
-![alt text](image-1.png)
+![image](https://github.com/NKprogram/visualsorthub/assets/121994468/005460e6-2387-4e2d-b732-fb31bb631f45)
+
 
 ### Sliders
 
-- **Change Array Size**: Adjust the number of elements in the array.
-- **Change Sorting Speed**: Control the speed at which the sorting animations play out.
+- **Change Array Size**: Adjust the number of elements in the array,ranging form an array size of 5 to 80
+- **Change Sorting Speed**: Control the speed at which the sorting animations play out,with a speed as fast as 1 to going as slow as 100
 
-![alt text](image-2.png)
+![image](https://github.com/NKprogram/visualsorthub/assets/121994468/fe7ac97d-c37e-4b0d-972e-8b5d1cf079eb)
 
-![alt text](image-3.png)
+![image](https://github.com/NKprogram/visualsorthub/assets/121994468/a00e235b-f2c2-4418-bd80-fe97a694ebab)
+
 
 ## How the Sorting Process Works
 
