@@ -72,7 +72,7 @@
   flex-direction: row;/* Arrange the array bars horizontally */
   align-items: flex-end;/* Align the array bars to the bottom of the container */
   justify-content: center;/* Center the array bars horizontally */
-  flex-wrap: nowrap;/* Prevent the array bars from wrapping */
+  flex-wrap: wrap;/* Prevent the array bars from wrapping */
   height: calc(100% - 30px);/* Make the array bars fill the available space */
   padding-bottom: 10px;/* Add some space at the bottom of the array bars */
   min-height: 200px;/* Set a minimum height for the array bars */
@@ -87,4 +87,20 @@
   display: inline-block;
   margin: 0 1px;
 }
-  
+
+/* Media Queries for responsiveness */
+@media (max-width: 600px) {
+  .sorting-visualizer:before {
+    font-size: 2em;
+    padding: 10px 0;
+  }
+
+  .ControlPanel, .bars-container {
+    padding: 10px;
+  }
+
+  .array-bar {
+    width: 1px; /* Narrower bars for smaller screens */
+    margin: 0 0.5px; /* Reduced margin */
+  }
+}
