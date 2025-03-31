@@ -24,13 +24,13 @@ To set up VisualSortHub on your local machine, follow these steps:
 
 ### Buttons
 
-- **Generate New Array**: Creates a new, randomly-organized array for sorting.
-- **Merge Sort**: Initiates the visualization for Merge Sort.
-- **Quick Sort**: Begins the Quick Sort animation.
-- **Bubble Sort**: Launches the Bubble Sort process.
-- **Insertion Sort**: Shows how Insertion Sort operates.
-- **Selection Sort**: Demonstrates the Selection Sort mechanism.
-- **Heap Sort**: Triggers the Heap Sort algorithm.
+- **Generate New Array**: Creates a new, randomly generated array for sorting.
+- **Merge Sort**: starts the merge sort algorithm.
+- **Quick Sort**: starts the Quick Sort animation.
+- **Bubble Sort**: starts the bubble sort algorithm.
+- **Insertion Sort**: starts the Insertion Sort algorithm.
+- **Selection Sort**: starts the Selection Sort algorithm.
+- **Heap Sort**: starts the Heap Sort algorithm.
 
 ![image](https://github.com/NKprogram/visualsorthub/assets/121994468/4ce665de-2dca-49a0-99a2-f1a0f3bc916f)
 

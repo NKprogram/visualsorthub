@@ -1,106 +1,104 @@
-  /* Overall background for the sorting visualizer */
-  .sorting-visualizer {
-    display: flex;
-    flex-direction: column; /* This ensures that the title and the bar container are stacked vertically */
-    align-items: center; /* This centers the children horizontally */
-    justify-content: flex-start; /* Aligns children to the start of the flex container */
-    background: linear-gradient(135deg, #0f0f0f 0%, #292929 50%, #1e1e1e 100%);
-    color: white;
-    min-height: 100vh;
-    width: 100%;
-    padding: 20px;
-  }
+.sorting-visualizer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: linear-gradient(135deg, #0f0f0f 0%, #292929 50%, #1e1e1e 100%);
+  color: white;
+  min-height: 100vh;
+  width: 100%;
+  padding: 20px;
+}
 
- /* Enhanced title styling */
 .sorting-visualizer:before {
   content: "VisualSortHub";
-  font-size: 3em; /* Increased font size for more impact */
-  font-weight: bold; /* Bold font weight for emphasis */
-  text-align: center;/* Center the title */
-  width: 100%;/* Make the title span the entire width of the container */
-  margin-bottom: 20px;/* Add some space between the title and the control panel */
-  padding: 20px 0; /* Increased padding for better spacing */
-  display: block;/* Make the title a block element */
-  position: relative;/* Position the title relative to the container */
-  z-index: 10;/* Ensure the title is on top of the background */
-  color: transparent; /* Hide the text */
-  background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);/* Rainbow gradient */
-  background-size: 200% 100%;/* Larger background size for more colors */
-  background-clip: text;/* Clip the background to the text */
-  -webkit-background-clip: text;/* Clip the background to the text for Safari */
-  animation: rainbow-animation 5s infinite linear;/* Animate the rainbow gradient */
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6); /* Soft shadow for depth */
+  font-size: 3em;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 20px 0;
+  display: block;
+  position: relative;
+  z-index: 10;
+  color: transparent;
+  background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: rainbow-animation 5s infinite linear;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
 }
 
-  
-  @keyframes rainbow-animation {
-    0% {background-position: 0% 50%;} 
-    50% {background-position: 100% 50%;}
-    100% {background-position: 0% 50%;}
-  }
-  
-  /* Subtle background pattern */
-  .sorting-visualizer:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    background-image: repeating-linear-gradient(
-      -45deg,
-      #fff0, #fff0 5px,
-      #ddd 5px, #ddd 10px
-    ); /* Subtle sorting motif */
-    opacity: 0.5; /* Make the background less intrusive */
-  }
+@keyframes rainbow-animation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
-/* Control panel styling */
+.sorting-visualizer:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    #fff0, #fff0 5px,
+    #ddd 5px, #ddd 10px
+  );
+  opacity: 0.5;
+}
+
 .ControlPanel {
-  width: 100%; /* Control panel width */
-  margin: 0 auto; /* Center the control panel horizontally */
-  padding: 15px; /* Padding inside the control panel */
-  background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Soft shadow for depth */
+  width: 100%;
+  margin: 0 auto;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-/* Button styling */
+.ControlPanel:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 .bars-container {
-  display: flex;/* Flex container for the array bars */
-  flex-direction: row;/* Arrange the array bars horizontally */
-  align-items: flex-end;/* Align the array bars to the bottom of the container */
-  justify-content: center;/* Center the array bars horizontally */
-  flex-wrap: wrap;/* Prevent the array bars from wrapping */
-  height: calc(100% - 30px);/* Make the array bars fill the available space */
-  padding-bottom: 10px;/* Add some space at the bottom of the array bars */
-  min-height: 200px;/* Set a minimum height for the array bars */
-  overflow-x: hidden;/* Hide the horizontal overflow */
-  overflow-y: hidden;/* Hide the vertical overflow */
-  width: 100%;/* Make the array bars fill the entire width of the container */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: calc(100% - 30px);
+  padding-bottom: 10px;
+  min-height: 200px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  width: 100%;
 }
 
-/* Bar styling */
 .array-bar {
   width: 2px;
   display: inline-block;
   margin: 0 1px;
 }
 
-/* Media Queries for responsiveness */
 @media (max-width: 600px) {
   .sorting-visualizer:before {
     font-size: 2em;
     padding: 10px 0;
   }
 
-  .ControlPanel, .bars-container {
+  .ControlPanel,
+  .bars-container {
     padding: 10px;
   }
 
   .array-bar {
-    width: 1px; /* Narrower bars for smaller screens */
-    margin: 0 0.5px; /* Reduced margin */
+    width: 1px;
+    margin: 0 0.5px;
   }
 }

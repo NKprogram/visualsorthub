@@ -1,17 +1,15 @@
-
-/* Import the font */
 .button-neon {
-  align-items: center;/* Center the text and the icon */
-  background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);/* Neon gradient */
-  border: 0;/* Remove the border */
+  align-items: center;
+  background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+  border: 0;
   border-radius: 8px;
-  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;/* Soft shadow for depth */
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
   color: #FFFFFF;
   display: flex;
-  font-family: 'Phantomsans', sans-serif;/* Use the custom font */
+  font-family: 'Phantomsans', sans-serif;
   font-size: 10px;
-  justify-content: center;/* Center the text and the icon */
-  line-height: 0.5em;/* Adjust the line height for the text */
+  justify-content: center;
+  line-height: 0.5em;
   padding: 3px;
   cursor: pointer;
   text-decoration: none;
@@ -22,14 +20,10 @@
   min-width: 140px;
   max-width: 100%;
 }
-
-/* Add hover and active states */
 .button-neon:active,
 .button-neon:hover {
   outline: 0;
 }
-
-/* Add the neon glow effect */
 .button-neon span {
   background-color: rgb(5, 6, 45);
   padding: 16px 24px;
@@ -38,30 +32,22 @@
   height: 100%;
   transition: 300ms;
 }
-
-/* Adjust the glow effect on hover */
 .button-neon:hover span {
   background: none;
 }
-
-/* Unique button styles for different sorting algorithms and controls */
 .button-merge { background-image: linear-gradient(144deg, #bea2a1, #e7810c); }
 .button-quick { background-image: linear-gradient(144deg, #04408d, #f7e605); }
 .button-bubble { background-image: linear-gradient(144deg, #0841ac, #069778, ); }
 .button-insertion { background-image: linear-gradient(144deg, #290101, #8a0416); }
-.button-selection { background-image: linear-gradient(144deg, #a00298, #022da3);} 
+.button-selection { background-image: linear-gradient(144deg, #a00298, #022da3);}
 .button-heap { background-image: linear-gradient(144deg, #059711, #d4f806); }
 .button-reset { background-image: linear-gradient(144deg, #f8f8f8, rgb(0, 0, 0)); }
-
-/* Adjust the button size for different screen sizes */
 @media (min-width: 768px) {
   .button-neon {
     font-size: 24px;
     min-width: 196px;
   }
 }
-
-/* Adjust the control panel layout for different screen sizes */
 .control-panel {
   display: flex;
   flex-direction: row;
@@ -71,57 +57,42 @@
   padding: 10px;
   gap: 10px;
 }
-
 .control-panel label {
   margin: 0 10px 0 0;
 }
-
-/* Adjust the slider and button spacing */
 .control-panel input[type="range"] {
   margin: 0 10px;
 }
-
-/* Adjust the button spacing */
 .control-panel button {
   margin: 0 5px;
 }
-
-
 .button-neon {
   margin: 0;
   flex: 0 0 auto;
 }
-
 @media (max-width: 768px) {
   .control-panel {
     flex-direction: column;
   }
-
   .control-panel label,
   .control-panel input[type="range"],
   .control-panel button {
     margin: 5px 0;
   }
-
   .button-neon {
     width: 100%;
   }
 }
-
-
-/* Adjust the slider container to ensure proper layout and spacing */
 .slider-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px; /* Adjust the space between the slider and its value display */
+  gap: 10px;
 }
-
-/* New Styles for Range Slider */
 .range {
-  -webkit-appearance: none; /* Removes default styling */
-  appearance: none; /* Define standard property for compatibility */
-  width: 100%; /* Adjusts the width to fit your control panel */
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
   height: 15px;
   background: #111;
   outline: none;
@@ -129,7 +100,6 @@
   overflow: hidden;
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 1);
 }
-
 .range::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 15px;
@@ -139,38 +109,63 @@
   cursor: pointer;
   border: 4px solid #333;
 }
-
 .slider-description {
-  font-size: 1em; /* Adjust to match your design */
-  color: #FFFFFF; /* Ensures visibility against the panel's background */
-  margin-top: 10px; /* Space between the slider and the text */
-  text-align: center; /* Centers the text under the slider */
+  font-size: 1em;
+  color: #FFFFFF;
+  margin-top: 10px;
+  text-align: center;
 }
-
 .slider-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px; /* Adjust the space between elements */
+  gap: 8px;
 }
-
 .slider-value {
-  font-size: 1em; /* Adjust based on your design */
-  color: #FFFFFF; /* Ensures visibility */
+  font-size: 1em;
+  color: #FFFFFF;
 }
-
-/* Adjust the #rangeValue style to fit your design */
 #rangeValue {
-  font-size: 1em; /* Adjust based on your control panel's text size */
-  color: #FFFFFF; /* Ensure it's visible against your control panel's background */
+  font-size: 1em;
+  color: #FFFFFF;
 }
-
 @media (max-width: 768px) {
   .range {
-    width: 90%; /* Adjust width for smaller screens */
+    width: 90%;
   }
-
   #rangeValue {
-    font-size: 0.8em; /* Adjust text size for readability on smaller screens */
+    font-size: 0.8em;
   }
+}
+
+
+.button-neon:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button-neon:disabled span {
+  background-color: #333; 
+  color: #888; 
+}
+
+.button-neon:disabled:hover span {
+  background-color: #333; 
+}
+
+
+.range:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.range:disabled::-webkit-slider-thumb {
+  background: #888;  
+  cursor: not-allowed;
+}
+
+
+.slider-container.disabled .slider-value,
+.slider-container.disabled .slider-description {
+  color: #888; 
 }
